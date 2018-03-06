@@ -15,6 +15,31 @@ jQuery(function($) {
         controlNav: false
     });
 
+    $('.flexslider').flexslider({
+        animation:'slide',
+        // smoothHeight:true,
+        controlNav: false,
+        prevText: "<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>",
+        nextText: "<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>"
+    });
+
+    $('.flexslider .flex-viewport').css('overflow', 'visible');
+
+
+    $('.menu_icon i.fa-bars').on('click', function () {
+        $('.menu_icon i.fa-bars').css('display', 'none');
+        $('.menu_icon i.fa-times').css('display', 'inline-block');
+
+        $('.top_navigation').css('display', 'block');
+    });
+
+    $('.menu_icon i.fa-times').on('click', function () {
+        $('.menu_icon i.fa-bars').css('display', 'inline-block');
+        $('.menu_icon i.fa-times').css('display', 'none');
+
+        $('.top_navigation').css('display', 'none');
+    });
+
 });
 
 Modernizr.addTest('ipad', function () {

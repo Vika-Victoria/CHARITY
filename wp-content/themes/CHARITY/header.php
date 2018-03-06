@@ -14,6 +14,7 @@
         <div class="header_thirt search_section menu_buttom cf">
             <div class="menu_icon">
                 <i class="fa fa-bars" aria-hidden="true"></i>
+                <i class="fa fa-times" style="display: none;" aria-hidden="true"></i>
             </div>
             <div class="search_block"><?php echo get_search_form(); ?></div>
 
@@ -48,6 +49,4 @@
 
     </nav>
 </header>
-<section class="home_slider">
 
-</section>
