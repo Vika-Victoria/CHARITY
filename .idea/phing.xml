@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhingConfiguration">
+    <buildFilePaths>
+      <buildFile options="" path="file://$PROJECT_DIR$/build.xml">
+        <option name="properties">
+          <list>
+            <property name="REV_TO_DEPLOY" value="6ce3732d5838898a90c1bb5d819a8ea678eeb4f4" />
+            <property name="SSH_LOGIN" />
+            <property name="SSH_PASSWORD" />
+          </list>
+        </option>
+      </buildFile>
+    </buildFilePaths>
+    <phingPath>$PROJECT_DIR$/../../utils/phing-latest.phar</phingPath>
+  </component>
+</project>

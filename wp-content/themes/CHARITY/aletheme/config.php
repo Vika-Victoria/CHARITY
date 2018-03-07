@@ -32,14 +32,14 @@ function aletheme_get_options() {
 						"type" => "heading");
 
     $options[] = array( "name" => "Site Logo",
-                        "desc" => "Upload or put the site logo link (Default logo size: 133-52px)",
+                        "desc" => "Upload or put the site logo link",
                         "id" => "ale_sitelogo",
                         "std" => "",
                         "type" => "upload");
 
     $options[] = array( "name" => "Site Footer Logo",
-                        "desc" => "Upload or put the site logo link (Default logo size: 133-52px)",
-                        "id" => "ale_sitelogofooter",
+                        "desc" => "Upload or put the site logo link",
+                        "id" => "ale_footerlogo",
                         "std" => "",
                         "type" => "upload");
 
@@ -225,7 +225,27 @@ function aletheme_get_options() {
 	$options[] = array( "name" => "Advanced Settings",
 						"type" => "heading");
 
-	
+	$options[] = array( "name" => "Footer Settings",
+						"type" => "heading");
+
+    $options[] = array( "name" => "Phone Number",
+                        "desc" => "Insert you phone number",
+                        "id" => "ale_footer_phone",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Address",
+                        "desc" => "Insert you address",
+                        "id" => "ale_footer_address",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Email",
+                        "desc" => "Insert you email",
+                        "id" => "ale_footer_email",
+                        "std" => "",
+                        "type" => "text");
+
 	$options[] = array( "name" => "Google Analytics",
 						"desc" => "Please insert your Google Analytics code here. Example: <strong>UA-22231623-1</strong>",
 						"id" => "ale_ga",

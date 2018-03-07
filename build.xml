@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Some Project Name" basedir="." default="deploy">
+
+    <!--<fail unless="SSH_LOGIN" message="Required property is not set: SSH_LOGIN"/>
+    <fail unless="SSH_PASSWORD" message="Required property is not set: SSH_PASSWORD"/>
+    <fail unless="SSH_HOST" message="Required property is not set: SSH_HOST"/>-->
+
+
+    <property name="SOURCE_DIR" value="C:/OpenServer/domains/phing_to_deploy"/>
+    <property name="DEPLOY_DIR" value="C:\OpenServer\domains\phing_deployed"/>
+    <property name="ARCHIVES_DIR" value="C:\OpenServer\domains\phing_archided"/>
+    <fail unless="DEPLOY_DIR" message="Required property is not set: DEPLOY_DIR"/>
+    <fail unless="ARCHIVES_DIR" message="Required property is not set: ARCHIVES_DIR"/>
+    <fail unless="SOURCE_DIR" message="Required property is not set: SOURCE_DIR"/>
+
+    <property name="DEPLOY_DIR_TMP" value="${DEPLOY_DIR}_tmp"/>
+    <property name="LAST_PROJECT_DIR" value="${DEPLOY_DIR}_last"/>
+
+
+
+
+
+    <target name="SSH SCP">
+        <property name="DEPLOY_DIR_TMP" value="${DEPLOY_DIR}_tmp"/>
+
+        <scp username="${SSH_LOGIN}" password="${SSH_PASSWORD}" host="${SSH_HOST}" todir="/var/www/mittens/deploy">
+            <fileset dir="${SOURCE_DIR}">
+                <exclude name=".idea/**"/>
+                <exclude name="build.xml"/>
+            </fileset>
+        </scp>
+
+        <!--<ssh username="username" password="password" host="192.168.1.200" command="pwd" />-->
+
+        <!--<ssh username="username" password="password" host="192.168.1.200" command="pwd" property="mypwd" display="false" />
+        <echo>The present working directory is ${mypwd}</echo>-->
+    </target>
+
+    <target name="Deploy Project">
+        <tstamp>
+            <format property="ARCHIVE_PROJECT_DIR" pattern="%F_%H-%M-%S"/>
+        </tstamp>
+        <property name="REVERT_FILE" value="${DEPLOY_DIR_TMP}/.revert"/>
+
+        <echo msg="Copying project files to temporary directory..."/>
+        <copy todir="${DEPLOY_DIR_TMP}">
+            <fileset dir="${SOURCE_DIR}" defaultexcludes="true">
+                <exclude name=".idea/**"/>
+                <exclude name="build.xml"/>
+            </fileset>
+        </copy>
+        <echo msg=""/>
+
+        <echo msg="Creating revert file..."/>
+        <echo file="${REVERT_FILE}" append="false">${ARCHIVE_PROJECT_DIR}</echo>
+        <available file="${REVERT_FILE}" type='file' property="REVERT_FILE_EXISTS" value="yes"/>
+        <echo msg="REVERT_FILE_EXISTS: ${REVERT_FILE_EXISTS}"/>
+        <fail message="Build failed! Revert file could not be be created.">
+            <condition>
+                <equals arg1="${REVERT_FILE_EXISTS}" arg2="yes"/>
+            </condition>
+        </fail>
+        <echo msg="Revert file is created."/>
+        <echo msg=""/>
+
+
+        <echo msg="Archiving current project version..."/>
+        <move file="${DEPLOY_DIR}" tofile="${ARCHIVES_DIR}/${ARCHIVE_PROJECT_DIR}" haltonerror="true"/>
+        <echo msg="Archiving is completed. Archive directory: ${ARCHIVES_DIR}/${ARCHIVE_PROJECT_DIR}"/>
+        <echo msg=""/>
+
+        <echo msg="Deploying new project version..."/>
+        <move file="${DEPLOY_DIR_TMP}" tofile="${DEPLOY_DIR}" haltonerror="true"/>
+        <echo msg="Deploying is complete."/>
+    </target>
+
+    <target name="Restore previous Project version">
+        <property name="REVERT_FILE" value="${DEPLOY_DIR}/.revert"/>
+        <loadfile property="ARCHIVE_PROJECT_DIR" file="${REVERT_FILE}"/>
+
+        <echo msg="Restoring project from archive."/>
+        <echo msg="Copying ${ARCHIVES_DIR}/${ARCHIVE_PROJECT_DIR} -> ${DEPLOY_DIR_TMP}"/>
+        <copy todir="${DEPLOY_DIR_TMP}">
+            <fileset dir="${ARCHIVES_DIR}/${ARCHIVE_PROJECT_DIR}" defaultexcludes="true"/>
+        </copy>
+        <echo msg="Restoring is complete."/>
+        <echo msg=""/>
+
+        <echo msg="Moving current project to emergency directory..."/>
+        <echo msg="Moving ${DEPLOY_DIR} -> ${LAST_PROJECT_DIR}"/>
+        <move file="${DEPLOY_DIR}" tofile="${LAST_PROJECT_DIR}" haltonerror="true"/>
+        <echo msg="Moving is completed."/>
+        <echo msg=""/>
+
+        <echo msg="Deploying restored project..."/>
+        <echo msg="Moving ${DEPLOY_DIR_TMP} -> ${DEPLOY_DIR}"/>
+        <move file="${DEPLOY_DIR_TMP}" tofile="${DEPLOY_DIR}" haltonerror="true"/>
+        <echo msg="Deploying is complete."/>
+    </target>
+
+    <target name="Restore # Project version">
+        <!--<property name="PROJECT_DIR_TO_RESTORE" value="H:/Projects/deploy_dir"/>-->
+        <fail unless="ARCHIVE_PROJECT_DIR" message="Required property is not set: ARCHIVE_PROJECT_DIR"/>
+
+        <echo msg="Restoring project from archive."/>
+        <echo msg="Copying ${ARCHIVES_DIR}/${ARCHIVE_PROJECT_DIR} -> ${DEPLOY_DIR_TMP}"/>
+        <copy todir="${DEPLOY_DIR_TMP}">
+            <fileset dir="${ARCHIVES_DIR}/${ARCHIVE_PROJECT_DIR}" defaultexcludes="true"/>
+        </copy>
+        <echo msg="Restoring is complete."/>
+        <echo msg=""/>
+
+        <echo msg="Moving current project to emergency directory..."/>
+        <echo msg="Moving ${DEPLOY_DIR} -> ${LAST_PROJECT_DIR}"/>
+        <move file="${DEPLOY_DIR}" tofile="${LAST_PROJECT_DIR}" haltonerror="true"/>
+        <echo msg="Moving is completed."/>
+        <echo msg=""/>
+
+        <echo msg="Deploying restored project..."/>
+        <echo msg="Moving ${DEPLOY_DIR_TMP} -> ${DEPLOY_DIR}"/>
+        <move file="${DEPLOY_DIR_TMP}" tofile="${DEPLOY_DIR}" haltonerror="true"/>
+        <echo msg="Deploying is complete."/>
+    </target>
+</project>
