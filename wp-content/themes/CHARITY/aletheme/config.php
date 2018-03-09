@@ -109,30 +109,44 @@ function aletheme_get_options() {
                         "type" => "heading");
 
     $options[] = array( "name" => "Select the body Font from Google Library",
-                        "desc" => "The default Font is - Raleway",
+                        "desc" => "The default Font is - Droid Serif",
                         "id" => "ale_headerfont",
-                        "std" => "Raleway",
+                        "std" => "Droid+Serif",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the body Font (Extended) from Google Library",
-                        "desc" => "The default Font (extended) is - 600",
+                        "desc" => "The default Font (extended)",
                         "id" => "ale_headerfontex",
-                        "std" => "600",
+                        "std" => "400,400i,700,700i",
                         "type" => "text",
                         );
 
     $options[] = array( "name" => "Select the Headers Font from Google Library",
-                        "desc" => "The default Font is - Libre Baskerville",
+                        "desc" => "The default Font is - Playfair Display SD",
                         "id" => "ale_mainfont",
-                        "std" => "Libre+Baskerville",
+                        "std" => "Playfair+Display+SD",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the Headers Font (Extended) from Google Library",
-                        "desc" => "The default Font (extended) is - 400,400italic",
+                        "desc" => "The default Font (extended)",
                         "id" => "ale_mainfontex",
-                        "std" => "400,400italic",
+                        "std" => "400,400i,700,700i,900,900i",
+                        "type" => "text",
+                        );
+
+    $options[] = array( "name" => "Select the Headers Font from Google Library",
+                        "desc" => "The default Font is - Playfair Display",
+                        "id" => "ale_thirtfont",
+                        "std" => "Playfair+Display",
+                        "type" => "select",
+                        "options" => $headerfont);
+
+    $options[] = array( "name" => "Select the Headers Font (Extended) from Google Library",
+                        "desc" => "The default Font (extended)",
+                        "id" => "ale_thirtfontex",
+                        "std" => "400",
                         "type" => "text",
                         );
 
@@ -220,15 +234,10 @@ function aletheme_get_options() {
 						"std" => "",
 						"type" => "checkbox");
 
-
-	
 	$options[] = array( "name" => "Advanced Settings",
 						"type" => "heading");
 
-	$options[] = array( "name" => "Footer Settings",
-						"type" => "heading");
-
-    $options[] = array( "name" => "Phone Number",
+	$options[] = array( "name" => "Phone Number",
                         "desc" => "Insert you phone number",
                         "id" => "ale_footer_phone",
                         "std" => "",
@@ -251,6 +260,9 @@ function aletheme_get_options() {
 						"id" => "ale_ga",
 						"std" => "",
 						"type" => "text");
+
+    $options[] = array( "name" => "Footer Settings",
+                        "type" => "heading");
 	
 	$options[] = array( "name" => "Footer Code",
 						"desc" => "If you have anything else to add in the footer - please add it here.",
@@ -280,7 +292,21 @@ function aletheme_get_options() {
                             'image_2' => $imagepath.'/2cl.png',
                             'image_3' => $imagepath.'/2cr.png', ),
         );
-	
+
+    $options[] = array( "name" => "Maps Settings",
+                        "type" => "heading");
+
+    $options[] = array( "name" => "Maps Icon",
+                        "desc" => "Upload or put the icon link",
+                        "id" => "ale_mapicon",
+                        "std" => "",
+                        "type" => "upload");
+
+    $options[] = array( "name" => "Map Style",
+                        "desc" => "Insert the map style from Snazzy Maps Servise",
+                        "id" => "ale_mapstyle",
+                        "std" => "",
+                        "type" => "text");
 	return $options;
 }
 

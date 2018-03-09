@@ -685,3 +685,145 @@ footer.main_footer{
     }
   }
 }
+.contact_form{
+  margin-bottom: 80px;
+
+  .inner_page_title{
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+
+    h3.inner_title{
+      font-size: 24px;
+      color: #000;
+      text-transform: none;
+      display: inline-block;
+
+      &::before{
+        content: "";
+        height: 1px;
+        border-top: 1px solid #f2f2f2;
+        width: 37%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 15px;
+      }
+      &::after{
+        content: "";
+        height: 1px;
+        border-top: 1px solid #f2f2f2;
+        width: 37%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 15px;
+      }
+    }
+   }
+
+.item_line{
+      margin-bottom: 30px;
+      width: 100%;
+      box-sizing: border-box;
+
+  .item_input{
+    width: 31%;
+    margin-right: 3%;
+    float: left;
+    box-sizing: border-box;
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  input[type="text"], input[type="email"]{
+    border: 1px solid #eee;
+    font-size: 12px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 48px;
+    color: #d4dad9;
+    width: 100%;
+    box-sizing: border-box;
+    .rounded(2px);
+    padding: 0 20px;
+
+    &::-webkit-input-placeholder {
+      color: #d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+    &::-moz-placeholder {
+      color:#d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+    &:-ms-input-placeholder {
+      color: #d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+    &::-moz-placeholder {
+      color: #d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+  textarea{
+    border: 1px solid #eee;
+    font-size: 12px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 150px;
+    color: #d4dad9;
+    width: 100%;
+    box-sizing: border-box;
+    .rounded(2px);
+    padding: 15px 20px 0;
+    &::-webkit-input-placeholder {
+      color: #d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+    &::-moz-placeholder {
+      color:#d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+    &:-ms-input-placeholder {
+      color: #d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+    &::-moz-placeholder {
+      color: #d4dad9;
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+  .submit{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background: @header_color;
+    height: 52px;
+    padding: 0 25px;
+    .rounded(2px);
+  }
+ }
+}
+  .contact_map {
+    position: relative;
+    &::before{
+      content: "";
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-shadow: inset 0 20px 20px  -20px rgba(0,0,0,0.4);
+      z-index: 99;
+    }
+  }
