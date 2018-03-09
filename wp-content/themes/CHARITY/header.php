@@ -49,4 +49,11 @@
 
     </nav>
 </header>
+<?php if(!is_page_template('page-home')){ ?>
+<section class="inner-header">
+    <div class="wrapper">
+        <?php get_breadcrumbs(); ?>
+    </div>
+</section>
+<?php } ?>
 

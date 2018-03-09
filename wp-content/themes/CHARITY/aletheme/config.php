@@ -317,38 +317,53 @@ function aletheme_metaboxes($meta_boxes) {
 
 
     $meta_boxes[] = array(
-        'id'         => 'home_page_metabox',
-        'title'      => 'Home Meta Options',
+        'id'         => 'contacts_page_metabox',
+        'title'      => 'Contacts Meta Options',
         'pages'      => array( 'page', ), // Post type
         'context'    => 'normal',
         'priority'   => 'high',
         'show_names' => true, // Show field names on the left
-        'show_on'    => array( 'key' => 'page-template', 'value' => array('page-home.php'), ), // Specific post templates to display this metabox
+        'show_on'    => array( 'key' => 'page-template', 'value' => array('template-contact.php'), ), // Specific post templates to display this metabox
 
         'fields' => array(
             array(
-                'name' => 'First Description',
+                'name' => __('Phone label', 'aletheme'),//для мультиязычности
                 'desc' => 'Insert the text',
-                'id'   => $prefix . 'descr1',
-                'type' => 'textarea',
-            ),
-            array(
-                'name' => 'Second Description',
-                'desc' => 'Insert the text',
-                'id'   => $prefix . 'descr2',
+                'id'   => $prefix . 'phone_label',
+                'std' => 'Phone',//для вставки данных в поле на странице
                 'type' => 'text',
             ),
             array(
-                'name' => 'File Upload',
+                'name' => 'Phone Number',
                 'desc' => 'Insert the text',
-                'id'   => $prefix . 'fileupload',
-                'type' => 'file',
+                'id'   => $prefix . 'phone_number',
+                'type' => 'text',
             ),
             array(
-                'name' => 'Text Date',
+                'name' => 'Address Label',
                 'desc' => 'Insert the text',
-                'id'   => $prefix . 'datefield',
-                'type' => 'wysiwyg',
+                'id'   => $prefix . 'address_label',
+                'std' => 'Address',
+                'type' => 'text',
+            ),
+            array(
+                'name' => 'Address',
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'address',
+                'type' => 'text',
+            ),
+            array(
+                'name' => 'Email Label',
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'email_label',
+                'std' => 'E-mail',
+                'type' => 'text',
+            ),
+            array(
+                'name' => 'Email',
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'email',
+                'type' => 'text',
             ),
         )
     );

@@ -8,6 +8,34 @@ if (isset($_POST['contact'])) {
 }
 get_header();
 ?>
+<div class="container contacts">
+    <div class="wrapper">
+    <h2 class="page-title"><?php the_title(); ?></h2>
+
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <div class="page_content">
+            <?php the_content(); ?>
+        </div>
+        <?php endwhile; endif; ?>
+
+    <div class="contacts_data cf">
+        <div class="thirt_part">
+            <span class="label"><i class="fa fa-phone" aria-hidden="true"></i><?php echo ale_get_meta('phone_label'); ?></span>
+            <span class="value phone_number"><?php echo ale_get_meta('phone_number'); ?></span>
+        </div>
+        <div class="thirt_part">
+            <span class="label"><i class="fa fa-globe" aria-hidden="true"></i><?php echo ale_get_meta('address_label'); ?></span>
+            <span class="value"><?php echo ale_get_meta('address'); ?></span>
+        </div>
+        <div class="thirt_part emailbox">
+            <span class="label"><i class="fa fa-envelope-o" aria-hidden="true"></i><?php echo ale_get_meta('email_label'); ?></span>
+            <span class="value"><a href="mailto:<?php echo ale_get_meta('email'); ?>"> <?php echo ale_get_meta('email'); ?></a></span>
+        </div>
+    </div>
+    </div>
+</div>
+
+
     <!-- Content -->
     <div class="contacts-center">
         <div class="content">
@@ -17,9 +45,7 @@ get_header();
             <div class="contact-content">
                 <div class="left">
                     <div class="contacts">
-                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                            <?php the_content(); ?>
-                        <?php endwhile; endif; ?>
+
                     </div>
                 </div>
 
