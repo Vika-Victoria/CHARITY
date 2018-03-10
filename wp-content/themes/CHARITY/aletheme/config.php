@@ -849,39 +849,24 @@ function aletheme_get_images_sizes() {
 
         'gallery' => array(
             array(
-                'name'      => 'gallery-thumba',
-                'width'     => 430,
-                'height'    => 267,
+                'name'      => 'gallery-kvadrat',
+                'width'     => 225,
+                'height'    => 225,
                 'crop'      => true,
             ),
             array(
-                'name'      => 'gallery-mini',
-                'width'     => 100,
-                'height'    => 67,
+                'name'      => 'gallery-vertical',
+                'width'     => 470,
+                'height'    => 225,
                 'crop'      => true,
             ),
             array(
-                'name'      => 'gallery-big',
-                'width'     => 680,
-                'height'    => 9999,
-                'crop'      => false,
-            ),
-        ),
-        'post' => array(
-            array(
-                'name'      => 'post-thumba',
-                'width'     => 475,
-                'height'    => 295,
-                'crop'      => true,
-            ),
-            array(
-                'name'      => 'post-minibox',
-                'width'     => 500,
-                'height'    => 200,
+                'name'      => 'gallery-bigkvadrat',
+                'width'     => 470,
+                'height'    => 470,
                 'crop'      => true,
             ),
         ),
-
 
     );
 }
