@@ -6,6 +6,8 @@ jQuery(function($) {
     $('.portfolioslider').flexslider({
         animation:'slide',
         smoothHeight:true,
+        prevText: "<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>",
+        nextText: "<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>",
         controlNav: false
     });
 
@@ -15,7 +17,7 @@ jQuery(function($) {
         controlNav: false
     });
 
-    $('.flexslider').flexslider({
+    $('.homeslider').flexslider({
         animation:'slide',
         // smoothHeight:true,
         controlNav: false,
@@ -23,7 +25,7 @@ jQuery(function($) {
         nextText: "<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>"
     });
 
-    $('.flexslider .flex-viewport').css('overflow', 'visible');
+    $('.homeslider .flex-viewport').css('overflow', 'visible');
 
 
     $('.menu_icon i.fa-bars').on('click', function () {
@@ -39,6 +41,13 @@ jQuery(function($) {
 
         $('.top_navigation').css('display', 'none');
     });
+
+    $('.laters-tweets').flexslider({
+        animation:'slide',
+        directionNav:false,
+        selector: "ul > li"
+    });
+
 
 });
 

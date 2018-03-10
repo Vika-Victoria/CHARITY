@@ -5,7 +5,7 @@
 get_header();?>
 
 <section class="home-slider">
-    <div class="flexslider">
+    <div class="flexslider homeslider">
         <ul class="slides">
             <?php $slider = ale_sliders_get_slider(ale_get_option('homesliderslug')); ?>
             <?php if($slider): ?>
