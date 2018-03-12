@@ -891,6 +891,22 @@ function aletheme_get_post_types() {
                 'first_image',
             )
         ),
+        'events' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+                    'excerpt',
+                    'comments'
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'Event',
+            'multiple' => 'Events',
+        ),
         'services' => array(
             'config' => array(
                 'public' => true,
@@ -927,6 +943,18 @@ function aletheme_get_taxonomies() {
             ),
             'singular'    => 'Gallery Category',
             'multiple'    => 'Gallery Categories',
+        ),
+
+
+        'events-category'    => array(
+            'for'        => array('events'),
+            'config'    => array(
+                'sort'        => true,
+                'args'        => array('orderby' => 'term_order'),
+                'hierarchical' => true,
+            ),
+            'singular'    => 'Event Category',
+            'multiple'    => 'Event Categories',
         ),
 
 

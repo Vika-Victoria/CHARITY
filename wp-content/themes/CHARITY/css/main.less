@@ -781,6 +781,7 @@ footer.main_footer{
     box-sizing: border-box;
     .rounded(2px);
     padding: 15px 20px 0;
+
     &::-webkit-input-placeholder {
       color: #d4dad9;
       font-size: 12px;
@@ -796,7 +797,7 @@ footer.main_footer{
       font-size: 12px;
       font-style: italic;
     }
-    &::-moz-placeholder {
+    &:-moz-placeholder {
       color: #d4dad9;
       font-size: 12px;
       font-style: italic;
@@ -1100,5 +1101,234 @@ footer.main_footer{
   .coment-form {
     margin-top: 60px;
 
+  }
+}
+/*Add Comment Form*/
+.add_comment_form {
+  margin-top: 50px;
+
+  p.info{
+    text-align: center;
+
+    a{
+      color: @header_color;
+    }
+  }
+
+  .form_title{
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 50px;
+
+    span{
+
+      &.left_line, &.right_line {
+        height: 1px;
+        background: #f2f2f2;
+        flex-grow: 1;
+      }
+    }
+
+    h4{
+    font-size: 24px;
+    color: @header_color;
+    text-align: center;
+    margin: 0 20px;
+  }
+  }
+
+  .form-item{
+    margin-bottom: 30px;
+    width: 100%;
+
+    input.submit{
+      background: @header_color;
+      color: #fff;
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      .rounded(3px);
+      height: 48px;
+      line-height: 48px;
+      padding: 0 47px;
+    }
+
+    textarea.message{
+      border: 2px solid #eee;
+      .rounded(3px);
+      background: #fff;
+      color: #d4dad9;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: italic;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 150px;
+      padding-left: 20px;
+      padding-top: 20px;
+
+
+      &::-webkit-input-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+      &::-moz-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+      &:-ms-input-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+      &:-moz-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+    }
+
+    input[type="text"], input[type="email"], input[type="url"]{
+      border: 2px solid #eee;
+      .rounded(3px);
+      background: #fff;
+      color: #d4dad9;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: italic;
+      width: ~"calc(33.333% - 20px)";
+      float: left;
+      box-sizing: border-box;
+      height: 48px;
+      line-height: 48px;
+      padding-left: 20px;
+
+      &::-webkit-input-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+      &::-moz-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+      &:-ms-input-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+      &:-moz-placeholder {
+        color: #d4dad9;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+      }
+    }
+
+    input[type="text"]{
+      margin-right: 15px;
+    }
+    input[type="email"]{
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+    input[type="url"]{
+      margin-left: 15px;
+    }
+  }
+}
+
+/*Events styles*/
+.ale_events_page{
+
+  .events_categories {
+
+    margin-bottom: 50px;
+
+    .event_category_link{
+      display: block;
+      padding-bottom: 30px;
+      margin: 0 25px;
+      padding-top: 5px;
+      color: #c3c7ca;
+      border-bottom: 2px solid transparent;
+      font-size: 11px;
+      font-family: Arial, Helvetica, sans-serif;
+      .transition(all 300ms easy-in-out);
+
+      &:hover {
+        color: #838383;
+        border-bottom: 2px solid #ffefa7;
+        .transition(all 300ms easy-in-out);
+      }
+      &:active {
+        color: #838383;
+        border-bottom: 2px solid #ffefa7;
+        .transition(all 300ms easy-in-out);
+      }
+    }
+    .taxlist{
+      border-bottom: 1px solid #d2d2d2;
+      margin-bottom: 50px;
+
+      ul{
+        text-align: center;
+
+        li{
+          display: inline-block;
+
+        }
+      }
+    }
+  }
+
+  .events_list{
+
+    .item_events{
+      width: ~"calc(33.3% - 20px)";
+      margin: 0 10px;
+      float: left;
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #d2d2d2;
+
+      .post_date{
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #c3c7ca;
+
+      }
+
+      h3{
+        text-transform: none;
+        font-size: 13px;
+        color: #000000;
+        line-height: 20px;
+        margin-bottom: 15px;
+
+        a{
+          color: inherit;
+          .transition(all 300ms easy-in-out);
+
+          &:hover{
+            color: @header_color;
+            text-decoration: underline;
+            .transition(all 300ms easy-in-out);
+          }
+        }
+      }
+    }
   }
 }
