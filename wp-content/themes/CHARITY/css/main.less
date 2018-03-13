@@ -451,6 +451,11 @@ footer.main_footer{
   min-height: 470px;
   background: #fff url(img/footer.png) bottom center no-repeat;
 
+  &.border_top_footer{
+    border-top: 1px solid #f2f2f2;
+    margin-top: 70px;
+  }
+
   .top_footer{
     min-height: 350px;
 
@@ -1078,6 +1083,16 @@ footer.main_footer{
         .name{
           font-size: 17px;
           color: #000;
+
+          a{
+            color: inherit;
+            .transition(all 300ms easy-in-out);
+
+            &:hover{
+              .opacity(.75);
+              .transition(all 300ms easy-in-out);
+            }
+          }
         }
         .time{
           font-family: Arial, Helvetica, sans-serif;
@@ -1289,6 +1304,13 @@ footer.main_footer{
         li{
           display: inline-block;
 
+          &.active{
+
+            a {
+              color: #838383;
+              border-bottom: 2px solid #ffefa7;
+            }
+          }
         }
       }
     }

@@ -22,7 +22,7 @@
                     </ul>
                 </div>
 
-        <div class="events_list">
+        <div class="events_list cf">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article class="item_events">
                     <h3>

@@ -1,5 +1,5 @@
     <!-- Footer -->
-<footer class="main_footer">
+<footer class="main_footer <?php if (!is_page_template('page-home.php')){echo 'border_top_footer'; } ?>">
     <div class="top_footer">
         <div class="wrapper">
             <div class="footer_logo footer_iner" >
