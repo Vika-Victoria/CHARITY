@@ -387,262 +387,21 @@ function aletheme_metaboxes($meta_boxes) {
         )
     );
 
+
     $meta_boxes[] = array(
-        'id'         => 'press_page_metabox',
-        'title'      => 'Press Page Options',
-        'pages'      => array( 'page', ), // Post type
+        'id'         => 'people_pages_metabox',
+        'title'      => 'People Options',
+        'pages'      => array( 'people', ), // Post type
         'context'    => 'normal',
         'priority'   => 'high',
         'show_names' => true, // Show field names on the left
-        'show_on'    => array( 'key' => 'page-template', 'value' => array('template-press.php'), ), // Specific post templates to display this metabox
+//        'show_on'    => array( 'key' => 'page-template', 'value' => array('template-contact.php'), ), // Specific post templates to display this metabox
+
         'fields' => array(
-            array(
-                'name' => 'Press title #1',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit1',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #1',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb1',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #1',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage1',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #1',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo1',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #2',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit2',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #2',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb2',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #2',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage2',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #2',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo2',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #3',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit3',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #3',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb3',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #3',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage3',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #3',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo3',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #4',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit4',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #4',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb4',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #4',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage4',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #4',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo4',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #5',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit5',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #5',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb5',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #5',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage5',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #5',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo5',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #6',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit6',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #6',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb6',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #6',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage6',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #6',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo6',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #7',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit7',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #7',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb7',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #7',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage7',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #7',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo7',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #8',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit8',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #8',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb8',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #8',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage8',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #8',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo8',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #9',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit9',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #9',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb9',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #9',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage9',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #9',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo9',
-                'type' => 'text',
-            ),
-
-            array(
-                'name' => 'Press title #10',
-                'desc' => 'Insert the title',
-                'id'   => $prefix . 'presstit10',
-                'type' => 'text',
-            ),
-            array(
-                'name' => 'Press Thumb #10',
-                'desc' => 'Insert the image (max-height - 280px)',
-                'id'   => $prefix . 'pressthumb10',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Image #10',
-                'desc' => 'Insert the image or let it empty if you want to use a video.',
-                'id'   => $prefix . 'pressimage10',
-                'type' => 'file',
-            ),
-            array(
-                'name' => 'Press Video link #10',
-                'desc' => 'Insert the video or let it empty if you want to use an image. (Embed link - ex //www.youtube.com/embed/LtulTGxJdDc)',
-                'id'   => $prefix . 'pressvideo10',
+          array(
+                'name' => __('Team Position', 'aletheme'),
+                'desc' => 'Type here the position',
+                'id'   => $prefix . 'people_post',
                 'type' => 'text',
             ),
         )
@@ -650,182 +409,146 @@ function aletheme_metaboxes($meta_boxes) {
 
 
     $meta_boxes[] = array(
-        'id'         => 'aboutslider_page_metabox',
-        'title'      => 'About Page Options',
+        'id'         => 'about_page_metabox',
+        'title'      => 'About Options',
         'pages'      => array( 'page', ), // Post type
         'context'    => 'normal',
         'priority'   => 'high',
         'show_names' => true, // Show field names on the left
         'show_on'    => array( 'key' => 'page-template', 'value' => array('template-about.php'), ), // Specific post templates to display this metabox
         'fields' => array(
+
             array(
-                'name' => 'First member Name',
-                'desc' => 'Insert member name...',
-                'id'   => $prefix . 'memname1',
-                'type'    => 'text',
+                'name' => __('Show Info Block', 'aletheme'),
+                'desc' => 'Select to show the infoblock',
+                'id'   => $prefix . 'info_display',
+                'type' => 'select',
+                'options' => array(
+                        array('name' => 'Show Block', 'value' => 'show'),
+                        array('name' => 'Hide Block', 'value' => 'hide'),
+                )
             ),
             array(
-                'name' => 'Second member Name',
-                'desc' => 'Insert member name...',
-                'id'   => $prefix . 'memname2',
-                'type'    => 'text',
+                'name' => __('Show Services Box', 'aletheme'),
+                'desc' => 'Select to show the infoblock',
+                'id'   => $prefix . 'services_display',
+                'type' => 'select',
+                'options' => array(
+                    array('name' => 'Show Block', 'value' => 'show'),
+                    array('name' => 'Hide Block', 'value' => 'hide'),
+                )
             ),
             array(
-                'name' => 'Third member Name',
-                'desc' => 'Insert member name...',
-                'id'   => $prefix . 'memname3',
-                'type'    => 'text',
+                'name' => __('Show People Box', 'aletheme'),
+                'desc' => 'Select to show the infoblock',
+                'id'   => $prefix . 'people_display',
+                'type' => 'select',
+                'options' => array(
+                    array('name' => 'Show Block', 'value' => 'show'),
+                    array('name' => 'Hide Block', 'value' => 'hide'),
+                )
+            ),
+
+
+            array(
+                'name' => __('Title for Info Section', 'aletheme'),
+                'desc' => 'Insert the title',
+                'id'   => $prefix . 'info_title',
+                'std'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'type' => 'text',
             ),
             array(
-                'name' => 'Fourth member Name',
-                'desc' => 'Insert member name...',
-                'id'   => $prefix . 'memname4',
-                'type'    => 'text',
+                'name' => __('Description for Info Section', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'info_text',
+                'std'  => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'type' => 'textarea_code',
             ),
             array(
-                'name' => 'First member Prof',
-                'desc' => 'Insert member prof...',
-                'id'   => $prefix . 'memprof1',
-                'type'    => 'text',
+                'name' => __('BG Image for Info Section', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'info_bg',
+                'std'  => '',
+                'type' => 'file',
             ),
             array(
-                'name' => 'Second member Prof',
-                'desc' => 'Insert member prof...',
-                'id'   => $prefix . 'memprof2',
-                'type'    => 'text',
+                'name' => __('Service Icon 1', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'info_icon1',
+                'std'  => '',
+                'type' => 'file',
             ),
             array(
-                'name' => 'Third member Prof',
-                'desc' => 'Insert member prof...',
-                'id'   => $prefix . 'memprof3',
-                'type'    => 'text',
+                'name' => __('Service Text 1', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'service_text1',
+                'std'  => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium',
+                'type' => 'textarea_code',
             ),
             array(
-                'name' => 'Fourth member Prof',
-                'desc' => 'Insert member prof...',
-                'id'   => $prefix . 'memprof4',
-                'type'    => 'text',
+                'name' => __('Service Icon 2', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'info_icon2',
+                'std'  => '',
+                'type' => 'file',
             ),
             array(
-                'name' => 'First member FB link',
-                'desc' => 'Insert member FB link...',
-                'id'   => $prefix . 'memfb1',
-                'type'    => 'text',
+                'name' => __('Service Text 2', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'service_text2',
+                'std'  => 'Sed ut perspiciatis unde omnis iste natus accusantium doloremque laudantium',
+                'type' => 'textarea_code',
             ),
             array(
-                'name' => 'Second member FB link',
-                'desc' => 'Insert member FB link...',
-                'id'   => $prefix . 'memfb2',
-                'type'    => 'text',
+                'name' => __('Service Icon 3', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'info_icon3',
+                'std'  => '',
+                'type' => 'file',
             ),
             array(
-                'name' => 'Third member FB link',
-                'desc' => 'Insert member FB link...',
-                'id'   => $prefix . 'memfb3',
-                'type'    => 'text',
+                'name' => __('Service Text 3', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'service_text3',
+                'std'  => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque ',
+                'type' => 'textarea_code',
             ),
             array(
-                'name' => 'fourth member FB link',
-                'desc' => 'Insert member FB link...',
-                'id'   => $prefix . 'memfb4',
-                'type'    => 'text',
+                'name' => __('Service Icon 4', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'info_icon4',
+                'std'  => ' ',
+                'type' => 'file',
             ),
             array(
-                'name' => 'First member TW link',
-                'desc' => 'Insert member TW link...',
-                'id'   => $prefix . 'memtw1',
-                'type'    => 'text',
+                'name' => __('Service Text 4', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'service_text4',
+                'std'  => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque',
+                'type' => 'textarea_code',
             ),
             array(
-                'name' => 'Second member TW link',
-                'desc' => 'Insert member TW link...',
-                'id'   => $prefix . 'memtw2',
-                'type'    => 'text',
+                'name' => __('Title for OurPeople', 'aletheme'),
+                'desc' => 'Insert the title',
+                'id'   => $prefix . 'people_title',
+                'std'  => 'Our people',
+                'type' => 'text',
             ),
             array(
-                'name' => 'Third member TW link',
-                'desc' => 'Insert member TW link...',
-                'id'   => $prefix . 'memtw3',
-                'type'    => 'text',
+                'name' => __('Description for Our People', 'aletheme'),
+                'desc' => 'Insert the text',
+                'id'   => $prefix . 'people_text',
+                'std'  => 'Sed ut perspiciatis unde omnis',
+                'type' => 'text',
             ),
             array(
-                'name' => 'Fourth member TW link',
-                'desc' => 'Insert member TW link...',
-                'id'   => $prefix . 'memtw4',
-                'type'    => 'text',
+                'name' => __('BG Image for Our People', 'aletheme'),
+                'desc' => 'Upload or select an image',
+                'id'   => $prefix . 'people_bg',
+                'std'  => '',
+                'type' => 'file',
             ),
-            array(
-                'name' => 'First member Email',
-                'desc' => 'Insert member email...',
-                'id'   => $prefix . 'memem1',
-                'type'    => 'text',
-            ),
-            array(
-                'name' => 'Second member Email',
-                'desc' => 'Insert member email...',
-                'id'   => $prefix . 'memem2',
-                'type'    => 'text',
-            ),
-            array(
-                'name' => 'Third member Email',
-                'desc' => 'Insert member email...',
-                'id'   => $prefix . 'memem3',
-                'type'    => 'text',
-            ),
-            array(
-                'name' => 'Fourth member Email',
-                'desc' => 'Insert member email...',
-                'id'   => $prefix . 'memem4',
-                'type'    => 'text',
-            ),
-            array(
-                'name' => 'First member Description',
-                'desc' => 'Insert member description...',
-                'id'   => $prefix . 'memdesc1',
-                'type'    => 'wysiwyg',
-            ),
-            array(
-                'name' => 'Second member Description',
-                'desc' => 'Insert member description...',
-                'id'   => $prefix . 'memdesc2',
-                'type'    => 'wysiwyg',
-            ),
-            array(
-                'name' => 'Third member Description',
-                'desc' => 'Insert member description...',
-                'id'   => $prefix . 'memdesc3',
-                'type'    => 'wysiwyg',
-            ),
-            array(
-                'name' => 'Fourth member Description',
-                'desc' => 'Insert member description...',
-                'id'   => $prefix . 'memdesc4',
-                'type'    => 'wysiwyg',
-            ),
-            array(
-                'name' => 'First member avatar',
-                'desc' => 'Insert member avatar...',
-                'id'   => $prefix . 'memava1',
-                'type'    => 'file',
-            ),
-            array(
-                'name' => 'Second member avatar',
-                'desc' => 'Insert member avatar...',
-                'id'   => $prefix . 'memava2',
-                'type'    => 'file',
-            ),
-            array(
-                'name' => 'Third member avatar',
-                'desc' => 'Insert member avatar...',
-                'id'   => $prefix . 'memava3',
-                'type'    => 'file',
-            ),
-            array(
-                'name' => 'Fourth member avatar',
-                'desc' => 'Insert member avatar...',
-                'id'   => $prefix . 'memava4',
-                'type'    => 'file',
-            ),
+
         )
     );
 
@@ -857,6 +580,15 @@ function aletheme_get_images_sizes() {
                 'name'      => 'gallery-bigkvadrat',
                 'width'     => 470,
                 'height'    => 470,
+                'crop'      => true,
+            ),
+        ),
+
+        'people' => array(
+            array(
+                'name'      => 'people-user',
+                'width'     => 87,
+                'height'    => 87,
                 'crop'      => true,
             ),
         ),
@@ -906,6 +638,22 @@ function aletheme_get_post_types() {
             ),
             'singular' => 'Event',
             'multiple' => 'Events',
+        ),
+        'people' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+                    'thumbnail',
+                    'excerpt'
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'People',
+            'multiple' => 'People',
         ),
         'services' => array(
             'config' => array(

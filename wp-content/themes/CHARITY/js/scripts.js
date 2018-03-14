@@ -3,6 +3,42 @@ jQuery(function($) {
 
     // Custom jQuery Code Here
 
+    // Background Parallax
+    var $window = $(window);
+    if($('section[data-type="background"]').length){
+        $('section[data-type="background"]').each(function(){
+
+            var $obj = $(this);
+            var offset = $obj.offset().top;
+
+            $(window).scroll(function()
+            {
+                offset = $obj.offset().top;
+
+                if ($window.scrollTop() > (offset - window.innerHeight))
+                {
+                    var yPos = -(($window.scrollTop() - offset) / 5 );
+                    var coords = '50% ' + ( yPos ) + 'px';
+                    $obj.css({ backgroundPosition:  coords });
+                }
+            });
+            $(window).resize(function()
+            {
+                offset = $obj.offset().top;
+            });
+        });
+    }
+
+
+    //People slider
+    $('.peoples_list').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        nextArrow: '.right_arrow .right',
+        prevArrow: '.left_arrow .left'
+    });
+
     $('.portfolioslider').flexslider({
         animation:'slide',
         smoothHeight:true,
