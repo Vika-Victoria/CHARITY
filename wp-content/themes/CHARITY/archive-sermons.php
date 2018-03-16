@@ -14,7 +14,6 @@
         $result = wp_get_recent_posts($args);
 
         foreach( $result as $p ){ ?>
-
         <div class="first">
             <div class="first_sermons">
                     <div class="next_sermons">
@@ -31,6 +30,8 @@
                 </div>
             </div>
         <?php } ?>
+
+
 
         <div class="sermons_list">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
