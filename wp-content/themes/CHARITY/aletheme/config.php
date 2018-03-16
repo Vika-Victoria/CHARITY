@@ -407,6 +407,25 @@ function aletheme_metaboxes($meta_boxes) {
         )
     );
 
+    $meta_boxes[] = array(
+        'id'         => 'sermons_pages_metabox',
+        'title'      => 'Sermons Options',
+        'pages'      => array( 'sermons', ), // Post type
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'show_names' => true, // Show field names on the left
+//        'show_on'    => array( 'key' => 'page-template', 'value' => array('template-contact.php'), ), // Specific post templates to display this metabox
+
+        'fields' => array(
+            array(
+                'name' => __('The Date', 'aletheme'),
+                'desc' => 'Type here the sermons_date',
+                'id'   => $prefix . 'sermons_date',
+                'type' => 'text_datetime_timestamp',
+            ),
+        )
+    );
+
 
     $meta_boxes[] = array(
         'id'         => 'about_page_metabox',
@@ -593,6 +612,21 @@ function aletheme_get_images_sizes() {
             ),
         ),
 
+        'sermons' => array(
+            array(
+                'name'      => 'sermons-list',
+                'width'     => 306,
+                'height'    => 172,
+                'crop'      => true,
+            ),
+            array(
+                'name'      => 'sermons-diglist',
+                'width'     => 369,
+                'height'    => 226,
+                'crop'      => true,
+            ),
+        ),
+
     );
 }
 
@@ -639,6 +673,23 @@ function aletheme_get_post_types() {
             'singular' => 'Event',
             'multiple' => 'Events',
         ),
+        'sermons' => array(
+            'config' => array(
+                'public' => true,
+                'menu_position' => 20,
+                'has_archive'   => true,
+                'supports'=> array(
+                    'title',
+                    'editor',
+                    'thumbnail',
+                    'excerpt',
+                    'comments'
+                ),
+                'show_in_nav_menus'=> true,
+            ),
+            'singular' => 'Sermons',
+            'multiple' => 'Sermons',
+        ),
         'people' => array(
             'config' => array(
                 'public' => true,
@@ -655,22 +706,23 @@ function aletheme_get_post_types() {
             'singular' => 'People',
             'multiple' => 'People',
         ),
-        'services' => array(
-            'config' => array(
-                'public' => true,
-                'menu_position' => 20,
-                'menu_icon' => 'dashicons-format-audio',
-                'has_archive'   => true,
-                'supports'=> array(
-                    'title',
-                    'editor',
-                    'thumbnail',
-                ),
-                'show_in_nav_menus'=> true,
-            ),
-            'singular' => 'Сервис',
-            'multiple' => 'Сервисы'
-        ),
+
+//        'services' => array(
+//            'config' => array(
+//                'public' => true,
+//                'menu_position' => 20,
+//                'menu_icon' => 'dashicons-format-audio',
+//                'has_archive'   => true,
+//                'supports'=> array(
+//                    'title',
+//                    'editor',
+//                    'thumbnail',
+//                ),
+//                'show_in_nav_menus'=> true,
+//            ),
+//            'singular' => 'Сервис',
+//            'multiple' => 'Сервисы'
+//        ),
     );
 }
 
