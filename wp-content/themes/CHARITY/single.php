@@ -12,6 +12,8 @@
                         </div>
                     <?php } ?>
 
+
+
                     <div class="post_info">
                         <div class="author">
                             <i class="fa fa-user" aria-hidden="true"></i><?php echo the_author_posts_link(); ?>
@@ -19,6 +21,9 @@
                         <div class="post_date">
                             <i class="fa fa-clock-o" aria-hidden="true"></i><?php echo get_the_date(); ?>
                         </div>
+                    </div>
+                    <div class="post_image">
+                        <?php echo get_the_post_thumbnail(); ?>
                     </div>
                 </div>
 

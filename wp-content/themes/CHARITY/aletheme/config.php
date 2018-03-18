@@ -468,7 +468,6 @@ function aletheme_metaboxes($meta_boxes) {
                 )
             ),
 
-
             array(
                 'name' => __('Title for Info Section', 'aletheme'),
                 'desc' => 'Insert the title',
@@ -612,6 +611,21 @@ function aletheme_get_images_sizes() {
             ),
         ),
 
+        'img_blog' => array(
+            array(
+                'name'      => 'img_blog_big',
+                'width'     => 460,
+                'height'    => 370,
+                'crop'      => true,
+            ),
+            array(
+                'name'      => 'img_blog_small',
+                'width'     => 270,
+                'height'    => 240,
+                'crop'      => true,
+            ),
+        ),
+
         'sermons' => array(
             array(
                 'name'      => 'sermons-list',
@@ -690,6 +704,7 @@ function aletheme_get_post_types() {
             'singular' => 'Sermons',
             'multiple' => 'Sermons',
         ),
+
         'people' => array(
             'config' => array(
                 'public' => true,
